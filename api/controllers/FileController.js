@@ -6,6 +6,9 @@
  */
 
 module.exports = {
+
+  // compare: http://maangalabs.com/blog/2014/08/12/uploading-a-file-in-sails/
+
   upload: function (req, res) {
     if (req.method === 'GET') {
       return res.json({'status': 'GET NOT allowed'});
