@@ -48,6 +48,10 @@ module.exports.routes = {
 
   '/uploadfile': {
     view: 'uploadfile'
+  },
+
+  '/editfile': {
+    view: 'editfile'
   }
 
 };
