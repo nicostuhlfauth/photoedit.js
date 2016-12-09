@@ -23,6 +23,9 @@ window.onload = function() {
     loadImage(this);
 
 
+
+
+
     // grayscale
 
     var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -36,6 +39,32 @@ window.onload = function() {
     }
 
     ctx.putImageData(imageData, 0, 0);
+
+
+
+
+    // image Rotating - does not work yet!
+
+    var newArray = data;
+
+
+    for (i = 0; i < img.naturalWidth; i++) {
+      for (j = 0; j < img.naturalHeight; j++) {
+        var newX = 4*i*Math.cos(90)+ 4*j*Math.sin(90);
+        var newY = (-1)*4*i*Math.sin(90) + 4*j*Math.cos(90);
+        newArray[newX*img.naturalWidth+newY] = data[i*img.naturalWidth+j];
+      }
+    }
+
+    console.log(imageData);
+
+
+    var imageData2 = ctx.createImageData(imageData.height, imageData.width);
+    imageData2.data.set(newArray);
+
+    console.log(imageData2);
+
+    ctx.putImageData(imageData2, 0, 0);
 
 
   }
