@@ -25,10 +25,10 @@ window.onload = function() {
 
 
   var img = new Image();
-  img.src = "http://localhost:1337/images/1e827def-21d0-428c-9d79-1892882691e5.png";
+  img.src = "http://localhost:1337/images/bca10cde-eb98-4943-8f10-69a0407d6501.png";
   //var img = document.getElementById("source");
 
-  img.onload = function () {
+  img.onload = function() {
     canvas.width = img.naturalWidth;
     canvas.height = img.naturalHeight;
     loadImage(this);
@@ -69,11 +69,11 @@ window.onload = function() {
       }
     }
 
-    //imageData2.data.set(newArray);
+    imageData2.data.set(newArray);
 
 
 
-    //ctx.putImageData(imageData2, 0, 0);
+    ctx.putImageData(imageData2, 0, 0);
 
 
   }
