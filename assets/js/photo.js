@@ -13,6 +13,17 @@ window.onload = function() {
     ctx.drawImage(img, 0, 0);
   }
 
+
+  function startRotate(imageData, newArray) {
+    console.log("Hallo");
+
+    imageData.data.set(newArray);
+    ctx.putImageData(imageData, 0, 0);
+
+
+  }
+
+
   var img = new Image();
   img.src = "http://localhost:1337/images/1e827def-21d0-428c-9d79-1892882691e5.png";
   //var img = document.getElementById("source");
@@ -31,7 +42,7 @@ window.onload = function() {
     var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     var data = imageData.data;
 
-    for (i = 0; i < data.length; i = i+4) {
+    /*for (i = 0; i < data.length; i = i+4) {
       var grayscale = data[i] * 0.3 + data[i+1] * 0.59 + data[i+2] * 0.11;
       data[i] = grayscale;
       data[i+1] = grayscale;
@@ -39,13 +50,14 @@ window.onload = function() {
     }
 
     ctx.putImageData(imageData, 0, 0);
-
+*/
 
 
 
     // image Rotating - does not work yet!
 
     var newArray = data;
+    var imageData2 = ctx.createImageData(imageData.height, imageData.width);
 
 
     for (i = 0; i < img.naturalWidth; i++) {
@@ -53,18 +65,15 @@ window.onload = function() {
         var newX = 4*i*Math.cos(90)+ 4*j*Math.sin(90);
         var newY = (-1)*4*i*Math.sin(90) + 4*j*Math.cos(90);
         newArray[newX*img.naturalWidth+newY] = data[i*img.naturalWidth+j];
+        if ((newX*img.naturalWidth+newY) == 4*i*j) startRotate(imageData2, newArray);
       }
     }
 
-    console.log(imageData);
+    //imageData2.data.set(newArray);
 
 
-    var imageData2 = ctx.createImageData(imageData.height, imageData.width);
-    imageData2.data.set(newArray);
 
-    console.log(imageData2);
-
-    ctx.putImageData(imageData2, 0, 0);
+    //ctx.putImageData(imageData2, 0, 0);
 
 
   }
