@@ -25,7 +25,7 @@ window.onload = function () {
 
 
   var img = new Image();
-  img.src = "http://localhost:1337/images/bca10cde-eb98-4943-8f10-69a0407d6501.png";
+  img.src = "http://localhost:1337/images/1e827def-21d0-428c-9d79-1892882691e5.png";
   //var img = document.getElementById("source");
 
   img.onload = function () {
@@ -64,17 +64,24 @@ window.onload = function () {
 
 // image Rotating - does not work yet!
 
-  /*
      var newArray = data;
      var imageData2 = ctx.createImageData(imageData.height, imageData.width);
 
 
-     for (i = 0; i < img.naturalWidth; i++) {
-     for (j = 0; j < img.naturalHeight; j++) {
-     var newX = 4*i*Math.cos(90)+ 4*j*Math.sin(90);
-     var newY = (-1)*4*i*Math.sin(90) + 4*j*Math.cos(90);
-     newArray[newX*img.naturalWidth+newY] = data[i*img.naturalWidth+j];
-     if ((newX*img.naturalWidth+newY) == 4*i*j) startRotate(imageData2, newArray);
+     for (i = 1; i <= img.naturalWidth; i++) {
+     for (j = 1; j <= img.naturalHeight; j++) {
+     var newX = img.naturalWidth - ((i*Math.cos((90 / 180)*Math.PI) + j*Math.sin((90 / 180)*Math.PI)));
+     var newY = img.naturalHeight + ((i*(-1)*Math.sin((90 / 180)*Math.PI) + j*Math.cos((90 / 180)*Math.PI)));
+
+     for (k= 0; k < 4; k++) {
+       newArray[4*((j*img.naturalWidth)-img.naturalWidth-i+k)] = data[(4*i*j)+k];
+     }
+
+
+
+
+       //newArray[newX*img.naturalWidth+newY] = data[i*img.naturalWidth+j];
+     if (i == (img.naturalHeight-1) && j == (img.naturalWidth-1)) startRotate(imageData2, newArray);
      }
      }
 
@@ -84,7 +91,6 @@ window.onload = function () {
 
      }
 
-  */
 
-  }
+
 }
