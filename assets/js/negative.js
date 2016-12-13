@@ -1,6 +1,8 @@
 /**
  * Created by benedikt on 11.12.16.
  */
+
+/*
 function negative() {
 
   var canvas = document.getElementById("myCanvas");
@@ -31,3 +33,4 @@ function negative() {
     ctx.putImageData(imageData, 0, 0);
   }
 }
+*/
