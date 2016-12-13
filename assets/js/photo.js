@@ -31,5 +31,9 @@ window.onload = function () {
     //monochrome (data, Schwellwert, r1, g1, b1, r2, g2,b2)
     imageData.data.set(monochrome(data, 128, 255, 0, 0, 0, 255, 0));
     ctx.putImageData(imageData, 0, 0);
+
+    //change color
+    imageData.data.set(correctColor(data, 70, 0, 0));
+    ctx.putImageData(imageData, 0, 0);
   }
 }
