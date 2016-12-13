@@ -25,7 +25,11 @@ window.onload = function () {
     //ctx.putImageData(imageData, 0, 0);
 
     //negative
-    imageData.data.set(negativeImg(data));
+    //imageData.data.set(negativeImg(data));
+    //ctx.putImageData(imageData, 0, 0);
+
+    // color change
+    imageData.data.set(correctColor(data, 10, -200, 0));
     ctx.putImageData(imageData, 0, 0);
   }
 
