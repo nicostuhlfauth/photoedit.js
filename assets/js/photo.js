@@ -39,5 +39,10 @@ window.onload = function () {
     //brightness (data, brightness - value 0 = black, 1 0 normal, >1 brighter)
     imageData.data.set(brightness(data, 1));
     ctx.putImageData(imageData, 0, 0);
+
+
+    // contrast, werte zwischen -255 und +255
+    imageData.data.set(changeContrast(data, -300));
+    ctx.putImageData(imageData, 0 ,0 );
   }
 }
