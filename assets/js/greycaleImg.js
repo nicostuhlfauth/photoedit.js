@@ -2,7 +2,6 @@
  * Created by benedikt on 13.12.16.
  */
 
-
 function grayscale(data) {
 
   for (i = 0; i < data.length; i = i + 4) {
