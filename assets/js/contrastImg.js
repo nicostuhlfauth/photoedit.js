@@ -13,9 +13,9 @@ function changeContrast(data, level) {
 
   for (i = 0; i < data.length; i = i+4) {
 
-    if (i == 0) console.log(data[i]);
+    if (i == 0) console.log(factor * (data[i] -128) + 128);
 
-    data[i] = factor * (data[i] -128.0) + 128.0;
+    data[i] = factor * (data[i] -128) + 128;
     data[i+1] = factor * (data[i+1] -128) + 128;
     data[i+2] = factor * (data[i+2] -128) + 128;
 
