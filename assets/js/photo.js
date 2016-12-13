@@ -28,10 +28,12 @@ window.onload = function () {
     //imageData.data.set(negativeImg(data));
     //ctx.putImageData(imageData, 0, 0);
 
-    // color change
-    imageData.data.set(correctColor(data, 10, -200, 0));
+    //monochrome (data, Schwellwert, r1, g1, b1, r2, g2,b2)
+    imageData.data.set(monochrome(data, 128, 255, 0, 0, 0, 255, 0));
+    ctx.putImageData(imageData, 0, 0);
+
+    // change color
+    imageData.data.set(correctColor(data, 50, 0, 0));
     ctx.putImageData(imageData, 0, 0);
   }
-
-
 }
