@@ -45,7 +45,7 @@ window.onload = function () {
     //imageData.data.set(changeContrast(data, 1));
     //ctx.putImageData(imageData, 0 ,0 );
 
-    //imageData.data.set(mirrorImg(data, img.naturalWidth, img.naturalHeight));
-    //ctx.putImageData(imageData, 0, 0);
+    imageData.data.set(mirrorImg(data, img.naturalWidth, img.naturalHeight));
+    ctx.putImageData(imageData, 0, 0);
   }
 }
