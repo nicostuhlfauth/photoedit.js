@@ -21,8 +21,8 @@ window.onload = function () {
     data = imageData.data;
 
     //grayscale
-    //imageData.data.set(grayscale(data));
-    //ctx.putImageData(imageData, 0, 0);
+    imageData.data.set(grayscale(data));
+    ctx.putImageData(imageData, 0, 0);
 
     //negative
     //imageData.data.set(negativeImg(data));
@@ -37,12 +37,15 @@ window.onload = function () {
     //ctx.putImageData(imageData, 0, 0);
 
     //brightness (data, brightness - value 0 = black, 1 0 normal, >1 brighter)
-    imageData.data.set(brightness(data, 1.5));
-    ctx.putImageData(imageData, 0, 0);
+    //imageData.data.set(brightness(data, 1.5));
+    //ctx.putImageData(imageData, 0, 0);
 
 
     // contrast, werte zwischen -255 und +255
-    imageData.data.set(changeContrast(data, 1));
-    ctx.putImageData(imageData, 0 ,0 );
+    //imageData.data.set(changeContrast(data, 1));
+    //ctx.putImageData(imageData, 0 ,0 );
+
+    //imageData.data.set(mirrorImg(data, img.naturalWidth, img.naturalHeight));
+    //ctx.putImageData(imageData, 0, 0);
   }
 }
