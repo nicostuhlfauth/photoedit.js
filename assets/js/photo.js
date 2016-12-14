@@ -21,8 +21,8 @@ window.onload = function () {
     data = imageData.data;
 
     //grayscale
-    imageData.data.set(grayscale(data));
-    ctx.putImageData(imageData, 0, 0);
+    //imageData.data.set(grayscale(data));
+    //ctx.putImageData(imageData, 0, 0);
 
     //negative
     //imageData.data.set(negativeImg(data));
