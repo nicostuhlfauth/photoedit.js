@@ -14,20 +14,22 @@ function mirrorImg(data, width, height) {
 
       //if (j == 1 && i == 0) console.log(width + height + j + i);
 
-      newArray[width * j - (i + 1)] = new Array();
+      //newArray[width * j - (i + 1)] = new Array();
 
-      newArray[width * j - (i + 1)][0] = data[width * (j - 1) + i][0];
-      newArray[width * j - (i + 1)][1] = data[width * (j - 1) + i][1];
-      newArray[width * j - (i + 1)][2] = data[width * (j - 1) + i][2];
-      newArray[width * j - (i + 1)][3] = data[width * (j - 1) + i][3];
+      //newArray[width * j - (i + 1)][0] = data[width * (j - 1) + i][0];
+      //newArray[width * j - (i + 1)][1] = data[width * (j - 1) + i][1];
+      //newArray[width * j - (i + 1)][2] = data[width * (j - 1) + i][2];
+      //newArray[width * j - (i + 1)][3] = data[width * (j - 1) + i][3];
+
+      newArray.push(data[width * j - (i + 1)][0]);
+      newArray.push(data[width * j - (i + 1)][1]);
+      newArray.push(data[width * j - (i + 1)][2]);
+      newArray.push(data[width * j - (i + 1)][3]);
+
 
       if (i * j >= (width - 1) * height) {
-        for (k = 204000; k < 204200; k++) {
-          console.log("A: " + data[k][0] + " N: " + newArray[k][0]);
-        }
+        return newArray;
       }
     }
-
   }
-
 }
