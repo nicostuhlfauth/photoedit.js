@@ -8,18 +8,8 @@ function mirrorImg(data, width, height) {
 
   var newArray = new Array();
 
-
   for (j = 1; j <= height; j++) {
     for (i = 0; i < width; i++) {
-
-      //if (j == 1 && i == 0) console.log(width + height + j + i);
-
-      //newArray[width * j - (i + 1)] = new Array();
-
-      //newArray[width * j - (i + 1)][0] = data[width * (j - 1) + i][0];
-      //newArray[width * j - (i + 1)][1] = data[width * (j - 1) + i][1];
-      //newArray[width * j - (i + 1)][2] = data[width * (j - 1) + i][2];
-      //newArray[width * j - (i + 1)][3] = data[width * (j - 1) + i][3];
 
       newArray.push(data[width * j - (i + 1)][0]);
       newArray.push(data[width * j - (i + 1)][1]);
@@ -31,5 +21,24 @@ function mirrorImg(data, width, height) {
         return newArray;
       }
     }
+
   }
 }
+
+/*
+function mirrorHorizontalImg(data, width, height) {
+
+  data = splitArray(data, width);
+
+  var newArray = new Array();
+
+
+  for (i =  0; i < 5; i++) {
+    newArray.unshift(data[i]);
+    if (newArray.length == data.length * 4) {
+      return newArray;
+    }
+  }
+}
+
+*/
