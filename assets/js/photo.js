@@ -42,7 +42,11 @@ window.onload = function () {
 
 
     // contrast, werte zwischen -255 und +255
-    imageData.data.set(changeContrast(data, 1));
+    //imageData.data.set(changeContrast(data, 1));
+    //ctx.putImageData(imageData, 0 ,0 );
+
+    //noise reduction
+    imageData.data.set(noiseReduction(data, img.naturalWidth, img.naturalHeight));
     ctx.putImageData(imageData, 0 ,0 );
   }
 }
