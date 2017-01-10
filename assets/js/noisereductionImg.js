@@ -4,14 +4,16 @@
 function noiseReduction(data, width, height) {
 
   var temp = 0;
+  var blubb = 0;
   var neighbour0 = 0;
   var neighbour1 = 0;
   var neighbour2 = 0;
   var neighbour3 = 0;
-  var threshold = 20;
+  var threshold = 2;
 
-  console.log(width);
-  console.log(height);
+  //console.log(width);
+  console.log(height*width);
+
 
   data = splitArray(data, 4);
 
@@ -82,19 +84,54 @@ function noiseReduction(data, width, height) {
         temp++;
       }
 
+      if ((data[i][0] - threshold <= (neighbour0 / temp) || data[i][0] + threshold >= (neighbour0 / temp)) &&
+          (data[i][1] - threshold <= (neighbour1 / temp) || data[i][1] + threshold >= (neighbour1 / temp)) &&
+          (data[i][2] - threshold <= (neighbour2 / temp) || data[i][2] + threshold >= (neighbour2 / temp)) &&
+          (data[i][3] - threshold <= (neighbour3 / temp) || data[i][3] + threshold >= (neighbour3 / temp))) {
+
+        neighbour0 = (((data[i][0]) + neighbour0 / temp)/2);
+        neighbour1 = (((neighbour1 / temp) + data[i][1])/2);
+        neighbour2 = (((neighbour2 / temp) + data[i][2])/2);
+        neighbour3 = (((neighbour3 / temp) + data[i][3])/2);
+
+        newArray.push(0);
+        newArray.push(255);
+        newArray.push(0);
+        newArray.push(255);
+
+        blubb++;
+
+      }
+      else {
+        var test0 = data[i][0];
+        var test1 = data[i][1];
+        var test2 = data[i][2];
+        var test3 = data[i][3];
+
+        newArray.push(test0);
+        newArray.push(test1);
+        newArray.push(test2);
+        newArray.push(255);
+      }
+
+
+      // newArray.push(data[i][0]);
+      // newArray.push(data[i][1]);
+      // newArray.push(data[i][2]);
+      // newArray.push(data[i][3]);
+
+      temp = 0;
       neighbour0 = 0;
       neighbour1 = 0;
       neighbour2 = 0;
       neighbour3 = 0;
-      if (temp <= 4){
-        console.log("I " + i);
-        console.log("J " + j);
-        console.log(temp);
-      }
-      temp = 0;
     }
     //console.log(neighbour0/temp + " " +neighbour1/temp + " " +neighbour2/temp + " " +neighbour3/temp);
+
   }
+  console.log(blubb);
+  console.log(newArray);
+  return newArray;
 }
 
 // newArray.push(data[width * j - (i + 1)][0]);

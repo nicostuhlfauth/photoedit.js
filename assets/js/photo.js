@@ -29,7 +29,7 @@ window.onload = function () {
     //ctx.putImageData(imageData, 0, 0);
 
     //monochrome (data, Schwellwert, r1, g1, b1, r2, g2,b2)
-    //imageData.data.set(monochrome(data, 128, 255, 0, 0, 0, 255, 0));
+    //imageData.data.set(monochrome(data, 64, 0, 0, 255, 0, 255, 0));
     //ctx.putImageData(imageData, 0, 0);
 
     //change color
@@ -37,8 +37,8 @@ window.onload = function () {
     //ctx.putImageData(imageData, 0, 0);
 
     //brightness (data, brightness - value 0 = black, 1 0 normal, >1 brighter)
-    imageData.data.set(brightness(data, 1.5));
-    ctx.putImageData(imageData, 0, 0);
+    //imageData.data.set(brightness(data, 1.5));
+    //ctx.putImageData(imageData, 0, 0);
 
 
     // contrast, werte zwischen -255 und +255
