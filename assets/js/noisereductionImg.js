@@ -9,7 +9,7 @@ function noiseReduction(data, width, height) {
   var neighbour1 = 0;
   var neighbour2 = 0;
   var neighbour3 = 0;
-  var threshold = 2;
+  var threshold = 20;
 
   //console.log(width);
   console.log(height*width);
@@ -84,9 +84,9 @@ function noiseReduction(data, width, height) {
         temp++;
       }
 
-      if ((data[i][0] - threshold <= (neighbour0 / temp) || data[i][0] + threshold >= (neighbour0 / temp)) &&
-          (data[i][1] - threshold <= (neighbour1 / temp) || data[i][1] + threshold >= (neighbour1 / temp)) &&
-          (data[i][2] - threshold <= (neighbour2 / temp) || data[i][2] + threshold >= (neighbour2 / temp)) &&
+      if ((data[i][0] - threshold <= (neighbour0 / temp) || data[i][0] + threshold >= (neighbour0 / temp)) ||
+          (data[i][1] - threshold <= (neighbour1 / temp) || data[i][1] + threshold >= (neighbour1 / temp)) ||
+          (data[i][2] - threshold <= (neighbour2 / temp) || data[i][2] + threshold >= (neighbour2 / temp)) ||
           (data[i][3] - threshold <= (neighbour3 / temp) || data[i][3] + threshold >= (neighbour3 / temp))) {
 
         neighbour0 = (((data[i][0]) + neighbour0 / temp)/2);
@@ -94,9 +94,9 @@ function noiseReduction(data, width, height) {
         neighbour2 = (((neighbour2 / temp) + data[i][2])/2);
         neighbour3 = (((neighbour3 / temp) + data[i][3])/2);
 
-        newArray.push(0);
+        newArray.push(neighbour0);
         newArray.push(255);
-        newArray.push(0);
+        newArray.push(neighbour2);
         newArray.push(255);
 
         blubb++;
@@ -106,7 +106,6 @@ function noiseReduction(data, width, height) {
         var test0 = data[i][0];
         var test1 = data[i][1];
         var test2 = data[i][2];
-        var test3 = data[i][3];
 
         newArray.push(test0);
         newArray.push(test1);
