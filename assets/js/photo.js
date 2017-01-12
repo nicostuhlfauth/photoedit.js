@@ -13,12 +13,25 @@ window.onload = function () {
   var imageData;
   var data;
 
+  var dataBackup = new Map();
+
   img.onload = function () {
     canvas.width = img.naturalWidth;
     canvas.height = img.naturalHeight;
     ctx.drawImage(this, 0, 0);
     imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     data = imageData.data;
+
+    document.getElementById("btn-grayscale").addEventListener("click", function(event) {
+      dataBackup.set("grayscale", data.slice());
+      imageData.data.set(grayscale(data));
+      ctx.putImageData(imageData, 0, 0);
+    });
+
+    document.getElementById("btn-backup").addEventListener("click", function(event) {
+      imageData.data.set(dataBackup.get("grayscale"));
+      ctx.putImageData(imageData, 0, 0);
+    });
 
     //grayscale
     //imageData.data.set(grayscale(data));
@@ -54,8 +67,8 @@ window.onload = function () {
     //ctx.putImageData(imageData, 0, 0);
 
     //Gauß 5x5 Filter
-    imageData.data.set(gaussFilter5(data, img.naturalWidth, img.naturalHeight));
-    ctx.putImageData(imageData, 0 , 0);
+    //imageData.data.set(gaussFilter5(data, img.naturalWidth, img.naturalHeight));
+    //ctx.putImageData(imageData, 0 , 0);
 
     //simple Blur Filter
     //imageData.data.set(simpleBlur(data, img.naturalWidth, img.naturalHeight));
