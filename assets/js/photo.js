@@ -50,9 +50,16 @@ window.onload = function () {
     //ctx.putImageData(imageData, 0 ,0 );
 
     //Gauß 3x3 Filter
-    imageData.data.set(gaussFilter3(data, img.naturalWidth, img.naturalHeight));
-    ctx.putImageData(imageData, 0 ,0 );
+    //imageData.data.set(gaussFilter3(data, img.naturalWidth, img.naturalHeight));
+    //ctx.putImageData(imageData, 0 ,0 );
 
+    //Gauß 5x5 Filter
+    //imageData.data.set(gaussFilter5(data, img.naturalWidth, img.naturalHeight));
+    //ctx.putImageData(imageData, 0 ,0 );
+
+    //simple Blur Filter
+    imageData.data.set(simpleBlur(data, img.naturalWidth, img.naturalHeight));
+    ctx.putImageData(imageData, 0 ,0 );
 
   }
 }
