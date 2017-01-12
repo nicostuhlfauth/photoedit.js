@@ -33,16 +33,20 @@ window.onload = function () {
     //ctx.putImageData(imageData, 0, 0);
 
     //change color
-    //imageData.data.set(correctColor(data, 70, 0, 0));
+    //imageData.data.set(correctColor(data, 0, 0, 100));
     //ctx.putImageData(imageData, 0, 0);
 
     //brightness (data, brightness - value 0 = black, 1 0 normal, >1 brighter)
-    imageData.data.set(brightness(data, 1.5));
-    ctx.putImageData(imageData, 0, 0);
+    //imageData.data.set(brightness(data, 1.5));
+    //ctx.putImageData(imageData, 0, 0);
 
 
     // contrast, werte zwischen -255 und +255
-    imageData.data.set(changeContrast(data, 1));
+    //imageData.data.set(changeContrast(data, 1));
+    //ctx.putImageData(imageData, 0 ,0 );
+
+    // Gauß-Filter
+    imageData.data.set(gaussFilter(data, img.naturalWidth, img.naturalHeight));
     ctx.putImageData(imageData, 0 ,0 );
   }
 }
