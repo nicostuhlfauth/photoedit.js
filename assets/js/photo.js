@@ -46,7 +46,13 @@ window.onload = function () {
     //ctx.putImageData(imageData, 0 ,0 );
 
     //noise reduction Schwellwert zwischen 0 und 255, je kleiner desto stärker weichzeichner
-    imageData.data.set(noiseReduction(data, img.naturalWidth, img.naturalHeight, 25));
+    //imageData.data.set(noiseReduction(data, img.naturalWidth, img.naturalHeight, 25));
+    //ctx.putImageData(imageData, 0 ,0 );
+
+    //Gauß 3x3 Filter
+    imageData.data.set(gaussFilter3(data, img.naturalWidth, img.naturalHeight));
     ctx.putImageData(imageData, 0 ,0 );
+
+
   }
 }
