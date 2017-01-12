@@ -8,7 +8,7 @@ window.onload = function () {
   var ctx = canvas.getContext("2d");
 
   var img = new Image();
-  img.src = "http://localhost:1337/images/" + document.getElementById("getURL").innerHTML + ".jpg";
+  img.src = "http://localhost:1337/images/" + document.getElementById("getURL").innerHTML;
 
   console.log(document.getElementById("getURL").innerHTML);
 
@@ -30,7 +30,7 @@ window.onload = function () {
       ctx.putImageData(imageData, 0, 0);
     });
 
-    document.getElementById("btn-backup").addEventListener("click", function(event) {
+    document.getElementById("greyscale-backup").addEventListener("click", function(event) {
       imageData.data.set(dataBackup.get("grayscale"));
       ctx.putImageData(imageData, 0, 0);
     });

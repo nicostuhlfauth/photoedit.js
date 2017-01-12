@@ -1,14 +1,30 @@
 <div id="getURL" style="display: none;"><%- req.param('selectedImage') %></div>
 
-
-<div class="body">
-  <div class="toolbar">
-    <a class="waves-effect waves-light btn" id="btn-grayscale">grayscale</a>
-    <a class="waves-effect waves-light btn" id="btn-backup">restore</a>
-
-
+<main>
+  <div class="side-nav fixed" style="float: left;">
+    <ul class="collapsible" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header"><i class="material-icons"></i>Grey Scale</div>
+        <div class="collapsible-body">
+          <p>
+            <a class="waves-effect waves-light btn" id="btn-grayscale">grayscale</a>
+            <a class="waves-effect grey lighten-4 btn" id="greyscale-backup">restore</a>
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons"></i>Second</div>
+        <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons"></i>Third</div>
+        <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+      </li>
+    </ul>
   </div>
-  <div class="pictureArea">
+
+  <div style="margin-left: 300px;">
     <canvas id="myCanvas"></canvas>
   </div>
-</div>
+</main>
+
