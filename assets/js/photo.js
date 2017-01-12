@@ -43,23 +43,23 @@ window.onload = function () {
 
     // contrast, werte zwischen -255 und +255
     //imageData.data.set(changeContrast(data, 70));
-    //ctx.putImageData(imageData, 0 ,0 );
+    //ctx.putImageData(imageData, 0, 0);
 
     //noise reduction Schwellwert zwischen 0 und 255, je kleiner desto stärker weichzeichner
     //imageData.data.set(noiseReduction(data, img.naturalWidth, img.naturalHeight, 25));
-    //ctx.putImageData(imageData, 0 ,0 );
+    //ctx.putImageData(imageData, 0, 0);
 
     //Gauß 3x3 Filter
     //imageData.data.set(gaussFilter3(data, img.naturalWidth, img.naturalHeight));
-    //ctx.putImageData(imageData, 0 ,0 );
+    //ctx.putImageData(imageData, 0, 0);
 
     //Gauß 5x5 Filter
-    //imageData.data.set(gaussFilter5(data, img.naturalWidth, img.naturalHeight));
-    //ctx.putImageData(imageData, 0 ,0 );
+    imageData.data.set(gaussFilter5(data, img.naturalWidth, img.naturalHeight));
+    ctx.putImageData(imageData, 0 , 0);
 
     //simple Blur Filter
-    imageData.data.set(simpleBlur(data, img.naturalWidth, img.naturalHeight));
-    ctx.putImageData(imageData, 0 ,0 );
+    //imageData.data.set(simpleBlur(data, img.naturalWidth, img.naturalHeight));
+    //ctx.putImageData(imageData, 0, 0);
 
   }
 }
