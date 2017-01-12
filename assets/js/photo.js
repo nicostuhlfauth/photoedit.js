@@ -71,7 +71,10 @@ window.onload = function () {
 
     document.getElementById("btn-rgbchanel").addEventListener("click", function(event) {
       dataBackup.set("rgbchanel", data.slice());
-      imageData.data.set(correctColor(data, 70, 0, 0));
+      imageData.data.set(correctColor(data,
+        parseFloat(document.getElementById("r-channel").value),
+        parseFloat(document.getElementById("g-channel").value),
+        parseFloat(document.getElementById("b-channel").value)));
       ctx.putImageData(imageData, 0, 0);
     });
 
@@ -87,7 +90,7 @@ window.onload = function () {
 
     document.getElementById("btn-brightness").addEventListener("click", function(event) {
       dataBackup.set("brightness", data.slice());
-      imageData.data.set(brightness(data, 1.5));
+      imageData.data.set(brightness(data, parseFloat(document.getElementById("brightness-threshold").value)));
       ctx.putImageData(imageData, 0, 0);
     });
 
@@ -102,7 +105,7 @@ window.onload = function () {
 
     document.getElementById("btn-contrast").addEventListener("click", function(event) {
       dataBackup.set("contrast", data.slice());
-      imageData.data.set(changeContrast(data, 70));
+      imageData.data.set(changeContrast(data, parseFloat(document.getElementById("contrast-threshold").value)));
       ctx.putImageData(imageData, 0, 0);
     });
 
@@ -117,7 +120,7 @@ window.onload = function () {
 
     document.getElementById("btn-noise").addEventListener("click", function(event) {
       dataBackup.set("noise", data.slice());
-      imageData.data.set(noiseReduction(data, img.naturalWidth, img.naturalHeight, 25));
+      imageData.data.set(noiseReduction(data, img.naturalWidth, img.naturalHeight, parseFloat(document.getElementById("noise-threshold").value)));
       ctx.putImageData(imageData, 0, 0);
     });
 
