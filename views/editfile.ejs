@@ -48,9 +48,11 @@
       <li>
         <div class="collapsible-header"><i class="material-icons"></i>Brightness</div>
         <div class="collapsible-body">
+          <form action="threshold">
           <p class="threshold-field">
             <input type="range" id="test5" min="-3" max="5"/>
           </p>
+          </form>
           <a class="waves-effect waves-light btn" id="btn-brightness">brightness</a>
           <a class="waves-effect grey lighten-4 btn" id="brightness-backup" style="color: #D32F2F;"
              style="color: none;">Undo</a>
@@ -69,6 +71,11 @@
       <li>
         <div class="collapsible-header"><i class="material-icons"></i>Noise Reduction</div>
         <div class="collapsible-body">
+          <form action="threshold">
+            <p class="threshold-field">
+              <input type="range" id="test5" min="0" max="255"/>
+            </p>
+          </form>
           <a class="waves-effect waves-light btn" id="btn-noise">noise reduction</a>
           <a class="waves-effect grey lighten-4 btn" id="noise-backup" style="color: #D32F2F;"
              style="color: none;">Undo</a>

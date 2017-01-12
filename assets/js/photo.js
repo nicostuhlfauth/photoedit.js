@@ -107,7 +107,7 @@ window.onload = function () {
     });
 
     document.getElementById("contrast-backup").addEventListener("click", function(event) {
-      imageData.data.set(dataBackup.get("brightness"));
+      imageData.data.set(dataBackup.get("contrast"));
       ctx.putImageData(imageData, 0, 0);
     });
 
