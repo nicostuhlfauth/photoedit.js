@@ -29,11 +29,11 @@ window.onload = function () {
     //ctx.putImageData(imageData, 0, 0);
 
     //monochrome (data, Schwellwert, r1, g1, b1, r2, g2,b2)
-    //imageData.data.set(monochrome(data, 128, 255, 0, 0, 0, 255, 0));
+    //imageData.data.set(monochrome(data, 64, 0, 0, 255, 0, 255, 0));
     //ctx.putImageData(imageData, 0, 0);
 
     //change color
-    //imageData.data.set(correctColor(data, 0, 0, 100));
+    //imageData.data.set(correctColor(data, 70, 0, 0));
     //ctx.putImageData(imageData, 0, 0);
 
     //brightness (data, brightness - value 0 = black, 1 0 normal, >1 brighter)
@@ -42,11 +42,11 @@ window.onload = function () {
 
 
     // contrast, werte zwischen -255 und +255
-    //imageData.data.set(changeContrast(data, 1));
+    //imageData.data.set(changeContrast(data, 70));
     //ctx.putImageData(imageData, 0 ,0 );
 
-    // Gauß-Filter
-    imageData.data.set(gaussFilter(data, img.naturalWidth, img.naturalHeight));
+    //noise reduction Schwellwert zwischen 0 und 255, je kleiner desto stärker weichzeichner
+    imageData.data.set(noiseReduction(data, img.naturalWidth, img.naturalHeight, 25));
     ctx.putImageData(imageData, 0 ,0 );
   }
 }
