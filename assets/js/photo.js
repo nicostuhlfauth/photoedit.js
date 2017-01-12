@@ -20,6 +20,11 @@ window.onload = function () {
     imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     data = imageData.data;
 
+    document.getElementById("btn-grayscale").addEventListener("click", function(event) {
+      imageData.data.set(grayscale(data));
+      ctx.putImageData(imageData, 0, 0);
+    });
+
     //grayscale
     //imageData.data.set(grayscale(data));
     //ctx.putImageData(imageData, 0, 0);
@@ -54,8 +59,8 @@ window.onload = function () {
     //ctx.putImageData(imageData, 0, 0);
 
     //Gauß 5x5 Filter
-    imageData.data.set(gaussFilter5(data, img.naturalWidth, img.naturalHeight));
-    ctx.putImageData(imageData, 0 , 0);
+    //imageData.data.set(gaussFilter5(data, img.naturalWidth, img.naturalHeight));
+    //ctx.putImageData(imageData, 0 , 0);
 
     //simple Blur Filter
     //imageData.data.set(simpleBlur(data, img.naturalWidth, img.naturalHeight));
