@@ -1,19 +1,13 @@
 /**
  * Created by pingu on 18.12.2016.
  */
-function gaussFilter(data, width, height) {
+function gaussFilter3(data, width, height) {
 
   var temp = 0;
-  var blubb = 0;
   var neighbour0 = 0;
   var neighbour1 = 0;
   var neighbour2 = 0;
   var neighbour3 = 0;
-  var threshold = 20;
-
-  //console.log(width);
-  console.log(height * width);
-
 
   data = splitArray(data, 4);
 
@@ -84,13 +78,9 @@ function gaussFilter(data, width, height) {
         temp++;
       }
 
-      var test0 = ((4 * (data[i][0])) + neighbour0)/16;
-      var test1 = ((4 * (data[i][1])) + neighbour1)/16;
-      var test2 = ((4 * (data[i][2])) + neighbour2)/16;
-
-      newArray.push(test0);
-      newArray.push(test1);
-      newArray.push(test2);
+      newArray.push((((4 * (data[(((j - 1) * width) + i)][0])) + neighbour0)/16));
+      newArray.push((((4 * (data[(((j - 1) * width) + i)][1])) + neighbour1)/16));
+      newArray.push((((4 * (data[(((j - 1) * width) + i)][2])) + neighbour2)/16));
       newArray.push(255);
 
       temp = 0;
@@ -100,7 +90,5 @@ function gaussFilter(data, width, height) {
       neighbour3 = 0;
     }
   }
-  console.log(blubb);
-  console.log(newArray);
   return newArray;
 }
