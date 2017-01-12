@@ -13,6 +13,8 @@ window.onload = function () {
   var imageData;
   var data;
 
+  var dataBackup = new Map();
+
   img.onload = function () {
     canvas.width = img.naturalWidth;
     canvas.height = img.naturalHeight;
@@ -21,7 +23,13 @@ window.onload = function () {
     data = imageData.data;
 
     document.getElementById("btn-grayscale").addEventListener("click", function(event) {
+      dataBackup.set("grayscale", data.slice());
       imageData.data.set(grayscale(data));
+      ctx.putImageData(imageData, 0, 0);
+    });
+
+    document.getElementById("btn-backup").addEventListener("click", function(event) {
+      imageData.data.set(dataBackup.get("grayscale"));
       ctx.putImageData(imageData, 0, 0);
     });
 
