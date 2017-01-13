@@ -192,7 +192,6 @@ window.onload = function () {
     });
 
     // Kanten
-
     document.getElementById("btn-edge").addEventListener("click", function(event) {
       dataBackup.set("edge", data.slice());
       imageData.data.set(edgeDetect(data, img.naturalWidth, img.naturalHeight));
