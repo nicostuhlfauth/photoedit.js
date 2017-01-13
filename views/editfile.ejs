@@ -1,14 +1,114 @@
 <div id="getURL" style="display: none;"><%- req.param('selectedImage') %></div>
 
+<main>
+  <div class="side-nav fixed" style="float: left;">
+    <ul class="collapsible" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header"><i class="material-icons"></i>Grey Scale</div>
+        <div class="collapsible-body">
+          <a class="waves-effect waves-light btn" id="btn-grayscale">grayscale</a>
+          <a class="waves-effect grey lighten-4 btn" id="greyscale-backup" style="color: #D32F2F;" style="color: none;">Undo</a>
+        </div>
+      </li>
 
-<div class="body">
-  <div class="toolbar">
-    <a class="waves-effect waves-light btn" id="btn-grayscale">grayscale</a>
-    <a class="waves-effect waves-light btn" id="btn-backup">restore</a>
+      <li>
+        <div class="collapsible-header"><i class="material-icons"></i>Negative</div>
+        <div class="collapsible-body">
+          <a class="waves-effect waves-light btn" id="btn-negative">negative</a>
+          <a class="waves-effect grey lighten-4 btn" id="negative-backup" style="color: #D32F2F;" style="color: none;">Undo</a>
+        </div>
+      </li>
 
+      <li>
+        <div class="collapsible-header"><i class="material-icons"></i>Monochrome</div>
+        <div class="collapsible-body">
+          <form action="threshold">
+            <p class="threshold-field">
+              <input type="range" id="test5" min="0" max="255"/>
+            </p>
+          </form>
+          <a class="waves-effect waves-light btn" id="btn-monochrome">Monochrome</a>
+          <a class="waves-effect grey lighten-4 btn" id="monochrome-backup" style="color: #D32F2F;"
+             style="color: none;">Undo</a>
+        </div>
+      </li>
 
+      <li>
+        <div class="collapsible-header"><i class="material-icons"></i>RGB Chanel</div>
+        <div class="collapsible-body">
+          <form action="threshold">
+            <p class="threshold-field">
+              Red
+              <input type="range" id="r-channel" min="-255" max="255"/>
+              Green
+              <input type="range" id="g-channel" min="-255" max="255"/>
+              Blue
+              <input type="range" id="b-channel" min="-255" max="255"/>
+            </p>
+          </form>
+          <a class="waves-effect waves-light btn" id="btn-rgbchanel">rgb channel</a>
+          <a class="waves-effect grey lighten-4 btn" id="rgb-backup" style="color: #D32F2F;"
+             style="color: none;">Undo</a>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons"></i>Brightness</div>
+        <div class="collapsible-body">
+          <form action="threshold">
+          <p class="threshold-field">
+            <input type="range" id="brightness-threshold" min="0.01" max="5" step ="0.01" value="1"/>
+          </p>
+          </form>
+          <a class="waves-effect waves-light btn" id="btn-brightness">brightness</a>
+          <a class="waves-effect grey lighten-4 btn" id="brightness-backup" style="color: #D32F2F;"
+             style="color: none;">Undo</a>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons"></i>Contrast</div>
+        <div class="collapsible-body">
+          <p class="threshold-field">
+            <input type="range" id="contrast-threshold" min="-255" max="255"/>
+          </p>
+          <a class="waves-effect waves-light btn" id="btn-contrast">contrast</a>
+          <a class="waves-effect grey lighten-4 btn" id="contrast-backup" style="color: #D32F2F;" style="color: none;">Undo</a>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons"></i>Noise Reduction</div>
+        <div class="collapsible-body">
+          <form action="threshold">
+            <p class="threshold-field">
+              <input type="range" id="noise-threshold" min="0" max="128" value="25"/>
+            </p>
+          </form>
+          <a class="waves-effect waves-light btn" id="btn-noise">noise reduction</a>
+          <a class="waves-effect grey lighten-4 btn" id="noise-backup" style="color: #D32F2F;"
+             style="color: none;">Undo</a>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons"></i>Blur</div>
+        <div class="collapsible-body">
+          <a class="waves-effect waves-light btn" id="btn-blur">blur</a>
+          <a class="waves-effect grey lighten-4 btn" id="blur-backup" style="color: #D32F2F;"
+             style="color: none;">Undo</a>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons"></i>Gauss Filter</div>
+        <div class="collapsible-body">
+          <a class="waves-effect waves-light btn" id="btn-gauss3">small gauss</a>
+          <a class="waves-effect grey lighten-4 btn" id="gauss3-backup" style="color: #D32F2F;" style="color: none;">Undo</a>
+          <a class="waves-effect waves-light btn" id="btn-gauss5">large gauss</a>
+          <a class="waves-effect grey lighten-4 btn" id="gauss5-backup" style="color: #D32F2F;" style="color: none;">Undo</a>
+        </div>
+      </li>
+    </ul>
   </div>
-  <div class="pictureArea">
+
+  <div style="margin-left: 300px; margin-top: 64px;">
     <canvas id="myCanvas"></canvas>
   </div>
-</div>
+</main>
+
