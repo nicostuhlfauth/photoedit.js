@@ -22,7 +22,14 @@ module.exports = {
     uploadFile.upload({dirname: '../../assets/images'}, function onUploadComplete(err, files) {
       if(err) return res.serverError(err);
 
-      var imagesGallery = JSON.parse(fs.readFileSync("assets/data/images.json", "utf8"));
+      var imagesGallery = [];
+
+      var inputJSON = fs.readFileSync("assets/data/images.json", "utf8");
+
+      if (inputJSON.length != 0) {
+        imagesGallery = JSON.parse(fs.readFileSync("assets/data/images.json", "utf8"));
+      }
+
       imagesGallery.push({filename: path.win32.basename(files[0].fd)});
 
       fs.writeFile("assets/data/images.json", JSON.stringify(imagesGallery), function(err) {
@@ -39,6 +46,20 @@ module.exports = {
       );
 
     })
+  },
+
+  gallery: function(req, res) {
+    var imagesGallery = [];
+
+      var inputJSON = fs.readFileSync("assets/data/images.json", "utf8");
+
+      if (inputJSON.length != 0) {
+        imagesGallery = JSON.parse(fs.readFileSync("assets/data/images.json", "utf8"));
+        return res.view('gallery', {images: imagesGallery});
+      } else {
+        return res.redirect('/uploadfile');
+      }
+    
   }
 };
 

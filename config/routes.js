@@ -52,6 +52,7 @@ module.exports.routes = {
 
   '/editfile/:selectedImage': {
     view: 'editfile'
-  }
+  },
+
 
 };
