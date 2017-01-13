@@ -1,12 +1,12 @@
 <main>
 
   <div style="margin-top: 64px;">
+
+  </div>
   <div class="row">
 
-    <div class="col s12">
-
 <% _.each(images, function (image) { %>
-      <div class="col s12 m4">
+      <div class="col s4">
       <div class="card small">
         <div class="card-image waves-effect waves-block waves-light" >
           <img class="activator" src="http://localhost:1337/images/<%= image.filename %>" >
@@ -16,11 +16,9 @@
           <p><a href="../editfile/<%= image.filename %>">Edit this Image</a></p>
         </div>
       </div>
-    </div>
-
-    </div>
+      </div>
   <% }) %>
+  </div>
 
-  </div>
-  </div>
+
 </main>
