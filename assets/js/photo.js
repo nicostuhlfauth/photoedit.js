@@ -172,5 +172,9 @@ window.onload = function () {
       imageData.data.set(dataBackup.get("blur"));
       ctx.putImageData(imageData, 0, 0);
     });
+
+    // Kanten
+    imageData.data.set(edgeDetect(data, img.naturalWidth, img.naturalHeight, 25));
+    ctx.putImageData(imageData, 0, 0);
   }
 }
