@@ -5,7 +5,7 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
-
+const path = require('path');
 module.exports = {
 
 
@@ -19,14 +19,11 @@ module.exports = {
     var uploadFile = req.file('uploadFile');
     uploadFile.upload({dirname: '../../assets/images'}, function onUploadComplete(err, files) {
       if(err) return res.serverError(err);
-      //res.json({status: 200, file: files});
-      imagePath = files[0].fd.split("/");
-      //console.log(imagePath[imagePath.length-1]);
 
       setTimeout(function() {
-        res.redirect('/editfile/' + imagePath[imagePath.length-1]);
+        res.redirect('/editfile/' + path.win32.basename(files[0].fd));
       },
-      5000
+      3000
       );
 
     })

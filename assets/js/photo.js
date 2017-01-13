@@ -10,8 +10,6 @@ window.onload = function () {
   var img = new Image();
   img.src = "http://localhost:1337/images/" + document.getElementById("getURL").innerHTML;
 
-  console.log(document.getElementById("getURL").innerHTML);
-
   var imageData;
   var data;
 
