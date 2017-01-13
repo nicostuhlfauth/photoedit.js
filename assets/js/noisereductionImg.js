@@ -91,14 +91,18 @@ function noiseReduction(data, width, height, threshold) {
         newArray.push(255);
 
       } else {
-       //newArray.push(0);
-       //newArray.push(0);
-       //newArray.push(0);
-       //newArray.push(255);
-       newArray.push(data[(((j - 1) * width) + i)][0]);
-       newArray.push(data[(((j - 1) * width) + i)][1]);
-       newArray.push(data[(((j - 1) * width) + i)][2]);
-       newArray.push(255);
+
+        if (document.getElementById("filled-in-box").checked == true) {
+          newArray.push(0);
+          newArray.push(0);
+          newArray.push(0);
+          newArray.push(255);
+        } else {
+          newArray.push(data[(((j - 1) * width) + i)][0]);
+          newArray.push(data[(((j - 1) * width) + i)][1]);
+          newArray.push(data[(((j - 1) * width) + i)][2]);
+          newArray.push(255);
+        }
       }
 
       temp = 0;
