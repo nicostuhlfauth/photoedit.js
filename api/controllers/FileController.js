@@ -6,6 +6,8 @@
  */
 
 const path = require('path');
+var fs = require('fs');
+
 module.exports = {
 
 
@@ -19,6 +21,16 @@ module.exports = {
     var uploadFile = req.file('uploadFile');
     uploadFile.upload({dirname: '../../assets/images'}, function onUploadComplete(err, files) {
       if(err) return res.serverError(err);
+
+      var imagesGallery = JSON.parse(fs.readFileSync("assets/data/images.json", "utf8"));
+      imagesGallery.push({filename: path.win32.basename(files[0].fd)});
+
+      fs.writeFile("assets/data/images.json", JSON.stringify(imagesGallery), function(err) {
+        if (err) {
+          return console.log(err);
+        }
+      });
+
 
       setTimeout(function() {
         res.redirect('/editfile/' + path.win32.basename(files[0].fd));
