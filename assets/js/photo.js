@@ -50,6 +50,24 @@ window.onload = function () {
       ctx.putImageData(imageData, 0, 0);
     });
 
+    //scale
+
+    document.getElementById("btn-scale").addEventListener("click", function(event) {
+      dataBackup.set("scale", data.slice());
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      canvas.width = canvas.width/2;
+      canvas.height = canvas.height/2;
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    });
+
+    document.getElementById("negative-backup").addEventListener("click", function(event) {
+      imageData.data.set(dataBackup.get("negative"));
+      ctx.putImageData(imageData, 0, 0);
+    });
+
+
+
+
     //monochrome (data, Schwellwert, r1, g1, b1, r2, g2,b2)
     //imageData.data.set(monochrome(data, 64, 0, 0, 255, 0, 255, 0));
     //ctx.putImageData(imageData, 0, 0);
