@@ -2,7 +2,7 @@
  * Created by Benedikt on 13.01.2017.
  */
 
-function edgeDetect(data, width, height, threshold) {
+function edgeDetect(data, width, height) {
 
 
   var temp = 0;
