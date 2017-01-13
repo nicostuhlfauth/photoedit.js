@@ -55,17 +55,15 @@ window.onload = function () {
     document.getElementById("btn-scale").addEventListener("click", function(event) {
       dataBackup.set("scale", data.slice());
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      canvas.width = canvas.width/2;
-      canvas.height = canvas.height/2;
+      canvas.width = canvas.width*(document.getElementById("scale-threshold").value);
+      canvas.height = canvas.height*(document.getElementById("scale-threshold").value);
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     });
 
     document.getElementById("negative-backup").addEventListener("click", function(event) {
-      imageData.data.set(dataBackup.get("negative"));
+      imageData.data.set(dataBackup.get("scale"));
       ctx.putImageData(imageData, 0, 0);
     });
-
-
 
 
     //monochrome (data, Schwellwert, r1, g1, b1, r2, g2,b2)

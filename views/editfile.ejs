@@ -1,7 +1,7 @@
 <div id="getURL" style="display: none;"><%- req.param('selectedImage') %></div>
 
 <main>
-  <div class="side-nav fixed" style="float: left;">
+  <div class="side-nav fixed" style="float: left; padding-bottom: 128px;">
     <ul class="collapsible" data-collapsible="accordion">
       <li>
         <div class="collapsible-header"><i class="material-icons"></i>Grey Scale</div>
@@ -123,7 +123,9 @@
       <li>
         <div class="collapsible-header"><i class="material-icons"></i>Scale</div>
         <div class="collapsible-body">
-        faktor
+          <p class="threshold-field">
+            <input type="range" id="scale-threshold" min="0.2" max="3" step ="0.2" value="1"/>
+          </p>
           <a class="waves-effect waves-light btn" id="btn-scale">scale</a>
           <a class="waves-effect grey lighten-4 btn" id="scale-backup" style="color: #D32F2F;"
              style="color: none;">Undo</a>
