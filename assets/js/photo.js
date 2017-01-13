@@ -190,5 +190,18 @@ window.onload = function () {
       imageData.data.set(dataBackup.get("blur"));
       ctx.putImageData(imageData, 0, 0);
     });
+
+    // Kanten
+
+    document.getElementById("btn-edge").addEventListener("click", function(event) {
+      dataBackup.set("edge", data.slice());
+      imageData.data.set(edgeDetect(data, img.naturalWidth, img.naturalHeight));
+      ctx.putImageData(imageData, 0, 0);
+    });
+
+    document.getElementById("edge-backup").addEventListener("click", function(event) {
+      imageData.data.set(dataBackup.get("edge"));
+      ctx.putImageData(imageData, 0, 0);
+    });
   }
 }
