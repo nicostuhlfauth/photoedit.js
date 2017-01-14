@@ -13,6 +13,9 @@ module.exports = {
 
   // compare: http://maangalabs.com/blog/2014/08/12/uploading-a-file-in-sails/
 
+
+  // used to manage uploading files, stores images in assets/images
+  // adds a new image to JSON file, used for gallery
   upload: function (req, res) {
     if (req.method === 'GET') {
       return res.json({'status': 'GET NOT allowed'});
@@ -48,6 +51,8 @@ module.exports = {
     })
   },
 
+  // reads JSON and returns gallery view with imagesGallery as an array
+  // if JSON file is empty, redirects to file upload router
   gallery: function(req, res) {
     var imagesGallery = [];
 
