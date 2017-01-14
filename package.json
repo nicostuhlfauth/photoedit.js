@@ -31,7 +31,7 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/nico/photoedit.js"
+    "url": "git://github.com/nicostuhlfauth/photoedit.js"
   },
   "author": "Nicolas Stuhlfauth, Benedikt Rauch",
   "license": "MIT"
