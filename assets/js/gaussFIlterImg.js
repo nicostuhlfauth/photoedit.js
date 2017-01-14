@@ -1,6 +1,9 @@
 /**
- * Created by Benedikt on 18.12.2016.
+ * Simple Gauß filter on 3x3 kernels
+ *
+ * checking in loops if pixels are defined (in image) and counting temp to calculate avarage values
  */
+
 function gaussFilter3(data, width, height) {
 
   var temp = 0;
@@ -78,9 +81,9 @@ function gaussFilter3(data, width, height) {
         temp++;
       }
 
-      newArray.push((((4 * (data[(((j - 1) * width) + i)][0])) + neighbour0)/16));
-      newArray.push((((4 * (data[(((j - 1) * width) + i)][1])) + neighbour1)/16));
-      newArray.push((((4 * (data[(((j - 1) * width) + i)][2])) + neighbour2)/16));
+      newArray.push((((4 * (data[(((j - 1) * width) + i)][0])) + neighbour0) / 16));
+      newArray.push((((4 * (data[(((j - 1) * width) + i)][1])) + neighbour1) / 16));
+      newArray.push((((4 * (data[(((j - 1) * width) + i)][2])) + neighbour2) / 16));
       newArray.push(255);
 
       temp = 0;
@@ -93,6 +96,12 @@ function gaussFilter3(data, width, height) {
   return newArray;
 }
 
+
+/**
+ * Simple Gauß filter on 5x5 kernels
+ *
+ * checking in loops if pixels are defined (in image) and counting temp to calculate avarage values
+ */
 
 function gaussFilter5(data, width, height) {
 
@@ -287,9 +296,9 @@ function gaussFilter5(data, width, height) {
         temp++;
       }
 
-      newArray.push((((41 * (data[(((j - 1) * width) + i)][0])) + neighbour0)/273));
-      newArray.push((((41 * (data[(((j - 1) * width) + i)][1])) + neighbour1)/273));
-      newArray.push((((41 * (data[(((j - 1) * width) + i)][2])) + neighbour2)/273));
+      newArray.push((((41 * (data[(((j - 1) * width) + i)][0])) + neighbour0) / 273));
+      newArray.push((((41 * (data[(((j - 1) * width) + i)][1])) + neighbour1) / 273));
+      newArray.push((((41 * (data[(((j - 1) * width) + i)][2])) + neighbour2) / 273));
       newArray.push(255);
 
       temp = 0;

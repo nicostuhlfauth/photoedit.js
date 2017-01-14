@@ -1,5 +1,5 @@
 /**
- * Created by nico on 13.12.16.
+ * Helper function to split one dimensional array in two dimensional array
  */
 
 function splitArray(array, counter) {

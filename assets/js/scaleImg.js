@@ -1,15 +1,16 @@
+/**
+ * Scales image with custom factor
+ */
+
+
 function scale(data, width, height, factor) {
 
-  console.log(data.length);
   data = splitArray(data, 4);
 
   var newArray = Array();
 
   x_ratio = width/(width*factor);
   y_ratio = height/(height*factor);
-
-  console.log(x_ratio);
-  console.log(y_ratio);
 
   for (y = 0; y < height*factor; y++) {
     for (x = 0; x < width*factor; x++) {
@@ -23,6 +24,5 @@ function scale(data, width, height, factor) {
                     data[(py * width) + px][3]);
     }
   }
-  console.log(newArray.length);
   return newArray;
 }

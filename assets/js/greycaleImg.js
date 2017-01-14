@@ -1,5 +1,5 @@
 /**
- * Created by benedikt on 13.12.16.
+ * Grayscale algorithm
  */
 
 function grayscale(data) {

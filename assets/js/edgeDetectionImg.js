@@ -1,5 +1,9 @@
 /**
- * Created by Benedikt on 13.01.2017.
+ * Edge detection with Scharr (advanced Sobel (minimizing weighted mean squared angular error in Fourier domain. Source wikipedia.org) algorithm
+ *
+ * Using splitArray so seperate pixels
+ * Calculating the gradient magnitude of two 3x3 kernels
+ *
  */
 
 function edgeDetect(data, width, height) {

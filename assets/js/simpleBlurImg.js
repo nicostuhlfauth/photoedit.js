@@ -1,5 +1,5 @@
 /**
- * Created by Benedikt on 18.12.2016.
+ * Simple blur filter
  */
 function simpleBlur(data, width, height) {
 

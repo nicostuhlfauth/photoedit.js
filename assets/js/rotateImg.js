@@ -1,5 +1,5 @@
 /**
- * Created by benedikt on 13.12.16.
+ * Rotate image clockwise by pushing pixels in new array
  */
 
 
@@ -13,6 +13,11 @@ function rotateRight(data, height, width) {
   }
   return newArray;
 }
+
+/**
+ * Rotate image counterclockwise by pushing pixels in new array
+ */
+
 
 function rotateLeft(data, height, width) {
   data = splitArray(data, 4);

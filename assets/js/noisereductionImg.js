@@ -1,6 +1,9 @@
 /**
- * Created by pingu on 18.12.2016.
- */
+ * Detecting noise pixels with custom threshold
+ *
+ * Output of filtered image
+ * Output of noise pixels
+ * */
 function noiseReduction(data, width, height, threshold) {
 
   var temp = 0;
@@ -79,15 +82,15 @@ function noiseReduction(data, width, height, threshold) {
       }
 
       if (((data[(((j - 1) * width) + i)][0] + threshold) <= (neighbour0 / temp)) ||
-          ((data[(((j - 1) * width) + i)][0] - threshold) >= (neighbour0 / temp)) ||
-          ((data[(((j - 1) * width) + i)][1] + threshold) <= (neighbour1 / temp)) ||
-          ((data[(((j - 1) * width) + i)][1] - threshold) >= (neighbour1 / temp)) ||
-          ((data[(((j - 1) * width) + i)][2] + threshold) <= (neighbour2 / temp)) ||
-          ((data[(((j - 1) * width) + i)][2] - threshold) >= (neighbour2 / temp))) {
+        ((data[(((j - 1) * width) + i)][0] - threshold) >= (neighbour0 / temp)) ||
+        ((data[(((j - 1) * width) + i)][1] + threshold) <= (neighbour1 / temp)) ||
+        ((data[(((j - 1) * width) + i)][1] - threshold) >= (neighbour1 / temp)) ||
+        ((data[(((j - 1) * width) + i)][2] + threshold) <= (neighbour2 / temp)) ||
+        ((data[(((j - 1) * width) + i)][2] - threshold) >= (neighbour2 / temp))) {
 
-        newArray.push((((neighbour0 / temp) + (data[(((j - 1) * width) + i)][0]))/2));
-        newArray.push((((neighbour1 / temp) + (data[(((j - 1) * width) + i)][1]))/2));
-        newArray.push((((neighbour2 / temp) + (data[(((j - 1) * width) + i)][2]))/2));
+        newArray.push((((neighbour0 / temp) + (data[(((j - 1) * width) + i)][0])) / 2));
+        newArray.push((((neighbour1 / temp) + (data[(((j - 1) * width) + i)][1])) / 2));
+        newArray.push((((neighbour2 / temp) + (data[(((j - 1) * width) + i)][2])) / 2));
         newArray.push(255);
 
       } else {
