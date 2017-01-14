@@ -1,0 +1,24 @@
+<main>
+
+  <div style="margin-top: 64px;">
+
+  </div>
+  <div class="row">
+
+<% _.each(images, function (image) { %>
+      <div class="col s4">
+      <div class="card small">
+        <div class="card-image waves-effect waves-block waves-light" >
+          <img class="activator" src="/images/<%= image.filename %>" >
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Card Title</span>
+          <p><a href="../editfile/<%= image.filename %>">Edit this Image</a></p>
+        </div>
+      </div>
+      </div>
+  <% }) %>
+  </div>
+
+
+</main>

@@ -50,8 +50,9 @@ module.exports.routes = {
     view: 'uploadfile'
   },
 
-  '/editfile': {
+  '/editfile/:selectedImage': {
     view: 'editfile'
-  }
+  },
+
 
 };

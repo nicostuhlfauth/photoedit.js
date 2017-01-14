@@ -30,12 +30,27 @@
 
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/materialize.min.css">
     <!--STYLES END-->
   </head>
 
   <body>
-    <%- body %>
+  <header>
+    <nav style="position: fixed; z-index: 5; background-color: #0d47a1;" class="row">
+      <div class="col s6" style="float: left;">
+        <a href="" style="size: 32px; padding: 0em; margin: 0em;">Online Photoshop</a>
+      </div>
+      <div class="col s6" style="float: left;">
+        <a href="/uploadfile" class="waves-effect cyan darken-2 btn" id="btn-upload" style="float: right; margin: 1em;">upload image</a>
+        <a href="/file/gallery" class="waves-effect cyan darken-2 btn" id="btn-upload" style="float: right; margin: 1em;">gallery</a>
+      </div>
 
+    </nav>
+  </header>
+    <%- body %>
+  <footer class="page-footer" style="background-color: #0d47a1;">
+
+  </footer>
 
 
     <!--
@@ -89,17 +104,22 @@
 
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/dependencies/jquery-3.1.1.min.js"></script>
+    <script src="/js/dependencies/materialize.min.js"></script>
     <script src="/js/brightnessImg.js"></script>
     <script src="/js/colorCorrectImg.js"></script>
     <script src="/js/contrastImg.js"></script>
+    <script src="/js/edgeDetectionImg.js"></script>
+    <script src="/js/gaussFIlterImg.js"></script>
     <script src="/js/greycaleImg.js"></script>
     <script src="/js/mirrorHImg.js"></script>
     <script src="/js/mirrorImg.js"></script>
     <script src="/js/monochromeImg.js"></script>
     <script src="/js/negativeImg.js"></script>
+    <script src="/js/noisereductionImg.js"></script>
     <script src="/js/photo.js"></script>
-    <script src="/js/rainbowIMage.js"></script>
     <script src="/js/rotateImg.js"></script>
+    <script src="/js/simpleBlurImg.js"></script>
     <script src="/js/splitArray.js"></script>
     <!--SCRIPTS END-->
   </body>

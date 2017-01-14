@@ -16,4 +16,3 @@ function splitArray(array, counter) {
 
   return matrix;
 }
-
