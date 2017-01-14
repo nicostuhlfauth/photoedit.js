@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2017 Nicolas Stuhlfauth, Benedikt Rauch
- * 
+ *
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
  */
@@ -254,5 +254,12 @@ window.onload = function () {
       imageData.data.set(dataBackup.get("mirror"));
       ctx.putImageData(imageData, 0, 0);
     });
+
+    // download the edited imge as jpeg
+    document.getElementById("btn-download").addEventListener("click", function (event) {
+      this.href=document.getElementById("myCanvas").toDataURL("image/jpeg", 1);
+      this.download="bild.jpg";
+    });
+
   }
 }
