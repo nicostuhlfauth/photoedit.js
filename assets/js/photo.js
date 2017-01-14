@@ -55,7 +55,6 @@ window.onload = function () {
       imageData2.data.set(rotate(data, img.naturalHeight, img.naturalWidth));
       canvas.width = img.naturalHeight;
       canvas.height = img.naturalWidth;
-      console.log(imageData2.data);
       ctx.putImageData(imageData2, 0, 0);
     });
 
