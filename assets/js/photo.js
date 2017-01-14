@@ -199,5 +199,22 @@ window.onload = function () {
       imageData.data.set(dataBackup.get("edge"));
       ctx.putImageData(imageData, 0, 0);
     });
+
+    // Mirror
+    document.getElementById("btn-mirror1").addEventListener("click", function(event) {
+      dataBackup.set("mirror", data.slice());
+      imageData.data.set(mirrorImg(data, img.naturalWidth, img.naturalHeight));
+      ctx.putImageData(imageData, 0, 0);
+    });
+    document.getElementById("btn-mirror2").addEventListener("click", function(event) {
+      dataBackup.set("mirror", data.slice());
+      imageData.data.set(mirrorHorizontalImg(data, img.naturalWidth, img.naturalHeight));
+      ctx.putImageData(imageData, 0, 0);
+    });
+
+    document.getElementById("mirror-backup").addEventListener("click", function(event) {
+      imageData.data.set(dataBackup.get("mirror"));
+      ctx.putImageData(imageData, 0, 0);
+    });
   }
 }

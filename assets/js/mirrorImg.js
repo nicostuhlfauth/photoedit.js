@@ -25,20 +25,17 @@ function mirrorImg(data, width, height) {
   }
 }
 
-/*
+
 function mirrorHorizontalImg(data, width, height) {
 
-  data = splitArray(data, width);
+  data = splitArray(data, 4);
 
   var newArray = new Array();
 
-
-  for (i =  0; i < 5; i++) {
-    newArray.unshift(data[i]);
-    if (newArray.length == data.length * 4) {
-      return newArray;
+  for (y = height; y > 0; y--) {
+    for (x = 1; x <= width; x++) {
+      newArray.push(data[width*(y-1)+x-1][0], data[width*(y-1)+x-1][1], data[width*(y-1)+x-1][2], data[width*(y-1)+x-1][3]);
     }
   }
+  return newArray;
 }
-
-*/
