@@ -1,4 +1,11 @@
 /**
+ * Copyright (c) 2017 Nicolas Stuhlfauth, Benedikt Rauch
+ * 
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
+ */
+
+/**
  * Edge detection with Scharr (advanced Sobel (minimizing weighted mean squared angular error in Fourier domain. Source wikipedia.org) algorithm
  *
  * Using splitArray so seperate pixels

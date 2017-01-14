@@ -1,4 +1,11 @@
 /**
+ * Copyright (c) 2017 Nicolas Stuhlfauth, Benedikt Rauch
+ * 
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
+ */
+
+/**
  * Simple Gauß filter on 3x3 kernels
  *
  * checking in loops if pixels are defined (in image) and counting temp to calculate avarage values

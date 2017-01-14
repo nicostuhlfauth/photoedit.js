@@ -1,4 +1,11 @@
 /**
+ * Copyright (c) 2017 Nicolas Stuhlfauth, Benedikt Rauch
+ * 
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
+ */
+
+/**
  * Detecting noise pixels with custom threshold
  *
  * Output of filtered image
