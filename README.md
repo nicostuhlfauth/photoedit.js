@@ -1,11 +1,11 @@
-# Photoedit Application
+# Photoedit.js
 This is a photo editing application, written in pure Javascript and HTML5.
 
 ## Get it up and running
 
 To use the tool the latest version of node.js needs to be installed.
 
-Download and unpack the project. 
+Download and unpack the project.
 
 Create dependencies by opening a terminal in directory and run "npm install"
 

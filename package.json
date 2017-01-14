@@ -1,8 +1,8 @@
 {
-  "name": "photoedit",
+  "name": "photoedit.js",
   "private": true,
-  "version": "0.0.0",
-  "description": "a Sails application",
+  "version": "1.0.0",
+  "description": "photo editing application, written in pure Javascript and HTML5",
   "keywords": [],
   "dependencies": {
     "ejs": "2.3.4",
@@ -31,8 +31,8 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/nico/photoedit.git"
+    "url": "git://github.com/nico/photoedit.js"
   },
-  "author": "nico",
-  "license": ""
+  "author": "Nicolas Stuhlfauth, Benedikt Rauch",
+  "license": "MIT"
 }
