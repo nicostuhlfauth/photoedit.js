@@ -69,9 +69,15 @@ window.onload = function () {
     //scale
 
     document.getElementById("btn-scale").addEventListener("click", function(event) {
-      console.log(data.length);
-      var test = scale(data, img.naturalWidth, img.naturalHeight, 2);
-      console.log(test.length);
+      var factor = parseFloat(document.getElementById("scale-factor").value);
+      var imageDataScale = ctx.createImageData(img.naturalWidth*(factor), img.naturalHeight*(factor));
+      imageDataScale.data.set(scale(data, img.naturalWidth, img.naturalHeight, factor));
+        canvas.width = img.naturalWidth*(factor);
+        canvas.height = img.naturalHeight*(factor);
+
+        //ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+      ctx.putImageData(imageDataScale, 0, 0);
     });
 
     document.getElementById("negative-backup").addEventListener("click", function(event) {
@@ -86,7 +92,31 @@ window.onload = function () {
 
     document.getElementById("btn-monochrome").addEventListener("click", function(event) {
       dataBackup.set("monochrome", data.slice());
-      imageData.data.set(monochrome(data, 64, 0, 0, 255, 0, 255, 0));
+      var color1;
+      var color2;
+
+      if(document.getElementById("color1a").checked){
+        color1 = {"red": 244, "green": 67, "blue": 54};
+      }
+      if(document.getElementById("color1b").checked){
+        color1 = {"red": 205, "green": 220, "blue": 57};
+      }
+      if(document.getElementById("color1c").checked){
+        color1 = {"red": 63, "green": 81, "blue": 181};
+      }
+      if(document.getElementById("color2a").checked){
+        color2 = {"red": 244, "green": 67, "blue": 54};
+      }
+      if(document.getElementById("color2b").checked){
+        color2 = {"red": 205, "green": 220, "blue": 57};
+      }
+      if(document.getElementById("color2c").checked){
+        color2 = {"red": 63, "green": 81, "blue": 181};
+      } else {
+        color1 = {"red": 0, "green": 0, "blue": 0};
+        color2 = {"red": 255, "green": 255, "blue": 255};
+      }
+      imageData.data.set(monochrome(data, parseFloat(document.getElementById("binary-threshold").value), color1, color2));
       ctx.putImageData(imageData, 0, 0);
     });
 

@@ -29,7 +29,31 @@
         <div class="collapsible-body">
           <form action="threshold">
             <p class="threshold-field">
-              <input type="range" id="test5" min="0" max="255"/>
+              <input type="range" id="binary-threshold" min="0" max="255"/>
+            </p>
+          </form>
+
+          <form action="color1">
+
+            <p>Pick first color <br>
+              <input name="group1" type="radio" id="color1a" />
+              <label for="color1a">Red</label>
+              <input name="group1" type="radio" id="color1b" />
+              <label for="color1b">Green</label>
+              <input name="group1" type="radio" id="color1c" />
+              <label for="color1c">Blue</label>
+            </p>
+          </form>
+
+          <form action="color2">
+
+            <p>Pick second color <br>
+              <input name="group2" type="radio" id="color2a" />
+              <label for="color2a">Red</label>
+              <input name="group2" type="radio" id="color2b" />
+              <label for="color2b">Green</label>
+              <input name="group2" type="radio" id="color2c" />
+              <label for="color2c">Blue</label>
             </p>
           </form>
           <a class="waves-effect cyan darken-2 btn" id="btn-monochrome">Monochrome</a>
@@ -130,11 +154,9 @@
         <div class="collapsible-header"><i class="material-icons"></i>Scale</div>
         <div class="collapsible-body">
           <p class="threshold-field">
-            <input type="range" id="scale-threshold" min="0.2" max="3" step ="0.2" value="1"/>
+            <input type="range" id="scale-factor" min="0.5" max="2" step="0.5"/>
           </p>
           <a class="waves-effect cyan darken-2 btn" id="btn-scale">scale</a>
-          <a class="waves-effect grey lighten-4 btn" id="scale-backup" style="color: #D32F2F;"
-             style="color: none;">Undo</a>
         </div>
       </li>
       <div class="divider"></div>
@@ -160,10 +182,10 @@
               <a class="waves-effect cyan darken-2 btn" id="btn-rotate" style="padding: 0; margin: 0;">rotate right</a>
             </div>
           </div>
-          <a class="waves-effect grey lighten-4 btn" id="rotate-backup" style="color: #D32F2F;"
-             style="color: none;" onClick="location.reload();">Reset image</a>
         </div>
       </li>
+      <a class="waves-effect grey lighten-4 btn" id="rotate-backup" style="color: #D32F2F;"
+         style="color: none;" onClick="location.reload();">Reset image</a>
     </ul>
   </div>
 
