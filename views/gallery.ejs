@@ -6,7 +6,7 @@
   <div class="row">
 
 <% _.each(images, function (image) { %>
-      <div class="col s4">
+      <div class="col s12 m6 l4">
       <div class="card small">
         <div class="card-image waves-effect waves-block waves-light" >
           <img class="activator" src="/images/<%= image.filename %>" >
@@ -19,6 +19,4 @@
       </div>
   <% }) %>
   </div>
-
-
 </main>
