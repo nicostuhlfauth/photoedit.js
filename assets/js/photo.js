@@ -8,7 +8,7 @@ window.onload = function () {
   var ctx = canvas.getContext("2d");
 
   var img = new Image();
-  img.src = "http://localhost:1337/images/" + document.getElementById("getURL").innerHTML;
+  img.src = "/images/" + document.getElementById("getURL").innerHTML;
 
   var imageData;
   var data;
