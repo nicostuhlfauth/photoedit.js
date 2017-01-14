@@ -69,11 +69,9 @@ window.onload = function () {
     //scale
 
     document.getElementById("btn-scale").addEventListener("click", function(event) {
-      dataBackup.set("scale", data.slice());
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      canvas.width = canvas.width*(document.getElementById("scale-threshold").value);
-      canvas.height = canvas.height*(document.getElementById("scale-threshold").value);
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      console.log(data.length);
+      var test = scale(data, img.naturalWidth, img.naturalHeight, 2);
+      console.log(test.length);
     });
 
     document.getElementById("negative-backup").addEventListener("click", function(event) {
