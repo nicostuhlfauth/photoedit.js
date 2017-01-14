@@ -5,7 +5,7 @@ This is a photo editing application, written in pure Javascript and HTML5.
 
 To use the tool the latest version of node.js needs to be installed.
 
-Download and unpack the project.
+Clone / Download and unpack the project.
 
 Create dependencies by opening a terminal in directory and run "npm install"
 
