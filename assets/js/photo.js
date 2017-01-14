@@ -98,23 +98,21 @@ window.onload = function () {
 
       if (document.getElementById("color1a").checked) {
         color1 = {"red": 244, "green": 67, "blue": 54};
-      }
-      if (document.getElementById("color1b").checked) {
+      } else if (document.getElementById("color1b").checked) {
         color1 = {"red": 205, "green": 220, "blue": 57};
-      }
-      if (document.getElementById("color1c").checked) {
+      } else if (document.getElementById("color1c").checked) {
         color1 = {"red": 63, "green": 81, "blue": 181};
-      }
-      if (document.getElementById("color2a").checked) {
-        color2 = {"red": 244, "green": 67, "blue": 54};
-      }
-      if (document.getElementById("color2b").checked) {
-        color2 = {"red": 205, "green": 220, "blue": 57};
-      }
-      if (document.getElementById("color2c").checked) {
-        color2 = {"red": 63, "green": 81, "blue": 181};
       } else {
         color1 = {"red": 0, "green": 0, "blue": 0};
+      }
+
+      if (document.getElementById("color2a").checked) {
+        color2 = {"red": 244, "green": 67, "blue": 54};
+      } else if (document.getElementById("color2b").checked) {
+        color2 = {"red": 205, "green": 220, "blue": 57};
+      } else if (document.getElementById("color2c").checked) {
+        color2 = {"red": 63, "green": 81, "blue": 181};
+      } else {
         color2 = {"red": 255, "green": 255, "blue": 255};
       }
       imageData.data.set(monochrome(data, parseFloat(document.getElementById("binary-threshold").value), color1, color2));
