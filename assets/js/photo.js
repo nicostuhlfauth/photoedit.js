@@ -52,7 +52,15 @@ window.onload = function () {
 
     document.getElementById("btn-rotate").addEventListener("click", function() {
       imageData2 = ctx.createImageData(img.naturalHeight, img.naturalWidth);
-      imageData2.data.set(rotate(data, img.naturalHeight, img.naturalWidth));
+      imageData2.data.set(rotateRight(data, img.naturalHeight, img.naturalWidth));
+      canvas.width = img.naturalHeight;
+      canvas.height = img.naturalWidth;
+      ctx.putImageData(imageData2, 0, 0);
+    });
+
+    document.getElementById("btn-rotate2").addEventListener("click", function() {
+      imageData2 = ctx.createImageData(img.naturalHeight, img.naturalWidth);
+      imageData2.data.set(rotateLeft(data, img.naturalHeight, img.naturalWidth));
       canvas.width = img.naturalHeight;
       canvas.height = img.naturalWidth;
       ctx.putImageData(imageData2, 0, 0);
