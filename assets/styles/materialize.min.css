@@ -6303,18 +6303,21 @@ input[type=range] + .thumb .value {
   color: #26a69a;
   font-size: 0;
   -webkit-transform: rotate(45deg);
-  transform: rotate(45deg)
+  transform: rotate(45deg);
+  display: none;
 }
 
 input[type=range] + .thumb.active {
-  border-radius: 50% 50% 50% 0
+  border-radius: 50% 50% 50% 0;
+  display: none;
 }
 
 input[type=range] + .thumb.active .value {
   color: #fff;
   margin-left: -1px;
   margin-top: 8px;
-  font-size: 10px
+  font-size: 10px;
+  display: none;
 }
 
 input[type=range] {
@@ -6523,7 +6526,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .side-nav .divider {
-  margin: 8px 0 0 0
+  margin: 0 0 0 0
 }
 
 .side-nav .subheader {
